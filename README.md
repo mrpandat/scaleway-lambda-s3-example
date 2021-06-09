@@ -1,5 +1,8 @@
-Cette lambda a pour but de migrer les backups de plus d'une semaine vers un bucket différent, pour ne plus surcharger un bucket avec des objets Glacier dont nous n'aurons sûrement jamais besoin.
+# scaleway-lambda-s3-example 
 
+This repository is an exemple of a scaleway lambda.
+
+The lambda aims to migrate files of more than a week to a different bucket.
 
 ## Requirements
 	
