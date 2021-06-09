@@ -1,0 +1,34 @@
+service:
+  name: scaleway-python3
+configValidationMode: off
+provider:
+  name: scaleway
+  runtime: python3
+  # Global Environment variables - used in every functions
+  env:
+    test: test
+  # the path to the credentials file needs to be absolute
+  scwToken: yourtokenhere
+  scwOrganization: youorganizationidhere
+
+plugins:
+  - serverless-scaleway-functions
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+functions:
+  moveoldbackups:
+    handler: handler.handle
+    # "events" is a list of triggers, the first key being the type of trigger.
+    events:
+      - schedule:
+          # CRON Job Schedule (UNIX Format)
+          rate: '*/10 * * * *'
+    # Local environment variables - used only in given function
+    env:
+      ACCESS_KEY_ID: youraccesskeyidhere
+      ACCESS_KEY: youraccesskeyhere
