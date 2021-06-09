@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 
 
 def handle(event, context):
-    SOURCE_BUCKET = 'backup-databases-fresh'
-    DESTINATION_BUCKET = 'backup-databases-old'
+    SOURCE_BUCKET = 'my-source-bucket'
+    DESTINATION_BUCKET = 'my-destination-bucket'
         
     session = boto3.session.Session()
     ACCESS_KEY_ID = os.environ['aws_access_key_id']
